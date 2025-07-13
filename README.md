@@ -44,6 +44,7 @@ Here are some open-source projects that are using this repository.
 If you're using it too, feel free to submit a PR to be featured here!
 
 - [humanus.cpp](https://github.com/WHU-MYTH-Lab/humanus.cpp): Lightweight C++ LLM agent framework
+- [llama.cpp.mcp](https://github.com/klogdotwebsitenotdotcom/llama.cpp.mcp): Low Overhead Agent Framework
 - ...waiting for your contribution...
 
 
