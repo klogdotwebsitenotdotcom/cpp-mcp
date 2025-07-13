@@ -1,4 +1,8 @@
-# MCP Protocol Framework
+# MCP Protocol Framework cleaned up and restructured for llama.cpp/vendor
+
+*DISCLAIMER*
+
+None of the code here is mine I just wanted to make it easier to update / integrate within llama.cpp
 
 [Model Context Protocol (MCP)](https://spec.modelcontextprotocol.io/specification/2024-11-05/architecture/) is an open protocol that provides a standardized way for AI models and agents to interact with various resources, tools, and services. This framework implements the core functionality of the MCP protocol, conforming to the 2024-11-05 basic protocol specification.
 
