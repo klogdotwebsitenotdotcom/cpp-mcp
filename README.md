@@ -39,7 +39,7 @@ Install system wide on debian based systems:
 # What you need to build the .deb packages
 sudo apt update && sudo apt install -y devscripts build-essential debhelper fakeroot lintian dh-make ccache
 # Clone the repo
-mkdir libmcp && git clone libmcp/ && cd libmcp/cpp-mcp
+mkdir ~/libmcp && git clone https://github.com/hkr04/cpp-mcp ~/libmcp/cpp-mcp && cd ~/libmcp/cpp-mcp
 # Generate the .deb file
 dpkg-buildpackage -us -uc
 # Install the .deb file
@@ -53,7 +53,7 @@ How to use on Linux
 #include <mcp/mcp_server.h>
 #include <mcp/mcp_sse_client.h>
 
-# The command to do it for the agent_example.cpp from the inside from within the git repo
+# The command to do it for the agent_example.cpp from the inside the git repo
 sed -i '1,/^$/{s/#include "\([^"]*\)"/#include <mcp\/\1>/g}' examples/agent_example.cpp
 
 # Compile
