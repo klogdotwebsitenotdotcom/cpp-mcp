@@ -1,8 +1,4 @@
-# MCP Protocol Framework cleaned up and restructured for llama.cpp/vendor
-
-*DISCLAIMER*
-
-None of the code here is mine I just wanted to make it easier to update / integrate within llama.cpp
+# MCP Protocol Framework
 
 [Model Context Protocol (MCP)](https://spec.modelcontextprotocol.io/specification/2024-11-05/architecture/) is an open protocol that provides a standardized way for AI models and agents to interact with various resources, tools, and services. This framework implements the core functionality of the MCP protocol, conforming to the 2024-11-05 basic protocol specification.
 
@@ -38,13 +34,39 @@ cmake -B build -DMCP_SSL=ON
 cmake --build build --config Release
 ```
 
+Install system wide on debian based systems:
+```
+# What you need to build the .deb packages
+sudo apt update && sudo apt install -y devscripts build-essential debhelper fakeroot lintian dh-make ccache
+# Clone the repo
+mkdir libmcp && git clone libmcp/ && cd libmcp/cpp-mcp
+# Generate the .deb file
+dpkg-buildpackage -us -uc
+# Install the .deb file
+sudo dpkg -i ../libcpp-mcp-dev_*.deb
+```
+How to use on Linux
+```
+# Replace the #include section in this manner
+
+#include <mcp/httplib.h>
+#include <mcp/mcp_server.h>
+#include <mcp/mcp_sse_client.h>
+
+# The command to do it for the agent_example.cpp from the inside from within the git repo
+sed -i '1,/^$/{s/#include "\([^"]*\)"/#include <mcp\/\1>/g}' examples/agent_example.cpp
+
+# Compile
+g++ examples/agent_example.cpp -lmcp -o agent_example
+```
+
 ## Adopters
 
 Here are some open-source projects that are using this repository.  
 If you're using it too, feel free to submit a PR to be featured here!
 
 - [humanus.cpp](https://github.com/WHU-MYTH-Lab/humanus.cpp): Lightweight C++ LLM agent framework
-- [llama.cpp.mcp](https://github.com/klogdotwebsitenotdotcom/llama.cpp.mcp): Low Overhead Agent Framework
+- [llama.cpp.mcp](https://github.com/klogdotwebsitenotdotcom/llama.cpp.mcp): Integration with llama.cpp
 - ...waiting for your contribution...
 
 
