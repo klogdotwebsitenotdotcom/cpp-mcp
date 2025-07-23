@@ -60,7 +60,7 @@ How to use on Linux
 #include <mcp/mcp_server.h>
 #include <mcp/mcp_sse_client.h>
 
-# The command to do it for the agent_example.cpp from inside the git repo
+# The command to do it for the agent_example.cpp from the inside the git repo
 sed -i '1,/^$/{s/#include "\([^"]*\)"/#include <mcp\/\1>/g}' examples/agent_example.cpp
 
 # Compile
