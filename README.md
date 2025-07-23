@@ -54,7 +54,8 @@ yay -S cpp-mcp
 
 Install system wide on Void Linux:
 ```
-
+# Coming Soon
+sudo xbps-install -Su cpp-mcp
 ```
 How to use on Linux
 ```
@@ -68,7 +69,7 @@ How to use on Linux
 sed -i '1,/^$/{s/#include "\([^"]*\)"/#include <mcp\/\1>/g}' examples/agent_example.cpp
 
 # Compile
-g++ examples/agent_example.cpp -lmcp -o agent_example
+g++ examples/agent_example.cpp -lmcp -lssl -lcrypto -o agent_example
 ```
 
 ## Adopters
