@@ -45,6 +45,13 @@ dpkg-buildpackage -us -uc
 # Install the .deb file
 sudo dpkg -i ../libcpp-mcp-dev_*.deb
 ```
+
+Install system wide on archlinux based system:
+```
+# From AUR
+yay -S cpp-mcp
+```
+
 How to use on Linux
 ```
 # Replace the #include section in this manner
