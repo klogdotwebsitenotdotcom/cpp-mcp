@@ -45,6 +45,13 @@ dpkg-buildpackage -us -uc
 # Install the .deb file
 sudo dpkg -i ../libcpp-mcp-dev_*.deb
 ```
+
+Install system wide on archlinux based system:
+```
+# From AUR
+yay -S cpp-mcp
+```
+
 How to use on Linux
 ```
 # Replace the #include section in this manner
@@ -53,7 +60,7 @@ How to use on Linux
 #include <mcp/mcp_server.h>
 #include <mcp/mcp_sse_client.h>
 
-# The command to do it for the agent_example.cpp from the inside from within the git repo
+# The command to do it for the agent_example.cpp from within the git repo
 sed -i '1,/^$/{s/#include "\([^"]*\)"/#include <mcp\/\1>/g}' examples/agent_example.cpp
 
 # Compile
